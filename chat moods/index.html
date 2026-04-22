@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Mood Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="chat-container">
+    <h2>AI Mood Chat 🤖</h2>
+
+    <div id="chat-box"></div>
+
+    <div class="input-area">
+      <input type="text" id="user-input" placeholder="Type your message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+if (text.includes("lonely") || text.includes("depressed")) {
+  return "sad";
+}
+function generateReply(mood) {
+  const replies = {
+    sad: [
+      "I'm here for you 💙",
+      "You are not alone 🤍",
+      "Want to talk about it?"
+    ],
+    happy: [
+      "That's amazing 😄",
+      "Keep smiling!",
+      "Love that energy 🔥"
+    ]
+  };
+
+  const arr = replies[mood] || ["Tell me more 🙂"];
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+localStorage.setItem("chat", chatBox.innerHTML);
